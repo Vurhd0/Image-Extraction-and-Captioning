@@ -37,4 +37,16 @@ Installing of necessary libraries is being handaled by run.sh you just need to a
 
 ### To run and get output of tagged images with tags in csv file
 
+The entire process of image extraction and tagging is automated with the run.sh script. The script will perform the following steps in sequence:
 
+Create snapshots of each page of the PDF.
+
+Extract images using the contour-based approach.
+
+Generate relevant tags for each image.
+
+To run the system, replace the pdf filename in the snap.py script and use the following command:
+bash
+```
+./run.sh
+```
