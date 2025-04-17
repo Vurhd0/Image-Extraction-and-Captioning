@@ -70,7 +70,7 @@ Tags or captions of images were stored in gemini_image_captions.csv and git_imag
 ![image](https://github.com/user-attachments/assets/31e6b2e4-ea18-427d-aeaf-e05abef73486)
 
 
-## Getting Started
+## Running the system to get Tagged Extracted images
 
 Follow these steps to set up and run the project:
 
@@ -81,7 +81,7 @@ Follow these steps to set up and run the project:
 
 Installing of necessary libraries is being handled by run.sh you just need to add the library name in requirements.txt file
 
-##To run and get output of tagged images with tags in csv file
+### To run and get output of tagged images with tags in csv file
 
 The entire process of image extraction and tagging is automated with the run.sh script. Just add the pdf file in the folder of project and replace the name of pdf file in the snap.py code
 
@@ -91,7 +91,6 @@ git clone https://github.com/Vurhd0/Image-Extraction-and-Captioning.git
 ```
 
 
-To run the system, replace the pdf filename to your choice pdf in the snap.py script and use the following command:
 bash
 ```
 ./run.sh
