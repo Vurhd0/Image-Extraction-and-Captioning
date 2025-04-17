@@ -81,9 +81,9 @@ Follow these steps to set up and run the project:
 
 Installing of necessary libraries is being handled by run.sh you just need to add the library name in requirements.txt file
 
-### To run and get output of tagged images with tags in csv file
+##To run and get output of tagged images with tags in csv file
 
-The entire process of image extraction and tagging is automated with the run.sh script.
+The entire process of image extraction and tagging is automated with the run.sh script. Just add the pdf file in the folder of project and replace the name of pdf file in the snap.py code
 
 Git clone the repository in your system
 ```
