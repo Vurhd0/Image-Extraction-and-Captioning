@@ -91,7 +91,7 @@ git clone https://github.com/Vurhd0/Image-Extraction-and-Captioning.git
 ```
 
 
-bash
+Open the bash terminal in the folder and run following command
 ```
 ./run.sh
 ```
