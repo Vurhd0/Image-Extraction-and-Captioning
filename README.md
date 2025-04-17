@@ -59,6 +59,15 @@ The Google API for image captioning is powerful, but the free version has certai
 
 While the HuggingFace model does not always provide captions with the same level of accuracy or context as the Google API, it offers a practical solution for tagging the images . As a result, some images may have captions that are less descriptive or inaccurate due to api key service being not available and the hugging face model being not that good.
 
+## Results on the Ncert pdf provided
+
+57 relevant images were extracted from the pdf and stored in Extracted images folder 
+Tags or captions of images were stored in gemini_image_captions.csv and git_image_captions.csv
+![image](https://github.com/user-attachments/assets/6903ca3a-58a8-4f01-9eea-5ef92703560d)
+
+![image](https://github.com/user-attachments/assets/94525162-35aa-405b-95f9-bd006eddddb4)
+
+![image](https://github.com/user-attachments/assets/31e6b2e4-ea18-427d-aeaf-e05abef73486)
 
 
 ## Getting Started
