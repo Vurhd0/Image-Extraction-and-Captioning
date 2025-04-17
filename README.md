@@ -13,19 +13,19 @@ These steps are all automated by the `run.sh` script, which runs the necessary s
 1.**requirements.text**
   It contains name of all the required libraries required for system
 
-2. **snap.py**
+2.**snap.py**
    This python script generates snapshots of each page of pdf as image and store them in snapshots folder
 
-3 **ext.py**
+3.**ext.py**
    This script uses opencv to extract images out of the snapshots and store them in Extracted images folder
 
-4 **adding_tag.py**
+4.**adding_tag.py**
    This script add tags to the images using the google gemini api and stores them in csv file gemini_cations.csv
 
-5 **adding_tag_transformer.py**
+5.**adding_tag_transformer.py**
    This code is an alternative code for the gemini api key tag generation as it fails on some images due to free tier not being available . Here we use the microsoft git image captioning model to caption the 
    images
-6 **run.sh**
+6.**run.sh**
    This is the shell script to run the whole system . you just need to place the files in same folder with pdf and can run all scripts using the run.sh (explained below)
 
    
