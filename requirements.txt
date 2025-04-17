@@ -1,0 +1,8 @@
+PyMuPDF
+Pillow
+opencv-python
+transformers 
+torchvision 
+torch
+pandas
+google-generativeai
