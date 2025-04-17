@@ -10,7 +10,7 @@ genai.configure(api_key="AIzaSyAHnmij-4td0qpDX0B4ywHgT3AFORKj7E0")  # Replace wi
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # Folder with images and output CSV path
-image_folder = "cropped_figures"
+image_folder = "Extracted images"
 output_csv = "gemini_image_captions.csv"
 captions = []
 
@@ -36,4 +36,4 @@ for file in sorted(os.listdir(image_folder)):
 # Save captions to CSV
 df = pd.DataFrame(captions, columns=["image", "caption"])
 df.to_csv(output_csv, index=False)
-print(f"\n✅ Captions saved to {output_csv}")
+print(f"\nCaptions saved to {output_csv}")
