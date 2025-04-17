@@ -36,4 +36,4 @@ for file in sorted(os.listdir(image_folder)):
 # Save to CSV
 df = pd.DataFrame(captions, columns=["image", "caption"])
 df.to_csv(output_csv, index=False)
-print(f"\n✅ Captions saved to {output_csv}")
+print(f"\nCaptions saved to {output_csv}")
