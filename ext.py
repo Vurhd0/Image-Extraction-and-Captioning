@@ -2,7 +2,7 @@ import cv2
 import os
 
 input_folder = 'snapshots'
-output_folder = 'cropped_figures'
+output_folder = 'Extracted images'
 os.makedirs(output_folder, exist_ok=True)
 
 def crop_figures_from_image(image_path, save_prefix):
