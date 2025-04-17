@@ -23,11 +23,13 @@ These steps are all automated by the `run.sh` script, which runs the necessary s
    This script add tags to the images using the google gemini api and stores them in csv file gemini_cations.csv
 
 5.**adding_tag_transformer.py**
-   This code is an alternative code for the gemini api key tag generation as it fails on some images due to free tier not being available . Here we use the microsoft git image captioning model to caption the 
+   This code is an alternative code for the gemini api key tag generation as it fails on some images due to free tier not being available . Here we use the 
+   microsoft git image captioning model to caption the 
    images
 6.**run.sh**
    This is the shell script to run the whole system . you just need to place the files in same folder with pdf and can run all scripts using the run.sh (explained below)
 
+### To change between the gemini api and git model for image captioning change the python script running command in the run.sh for gemini "adding_tag.py" for git model "adding_tag_transformer.py"
    
 ## Workflow Overview
 
