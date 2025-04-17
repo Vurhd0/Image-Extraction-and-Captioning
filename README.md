@@ -57,9 +57,6 @@ To work around this limitation, I leveraged the **Microsoft'S Git Captioning Mod
 ### Challenges with the Google API
 The Google API for image captioning is powerful, but the free version has certain usage limits, including restrictions on the number of images that can be captioned within a specific time period or quota. As a result, some of the images failed to get tagged, leading to errors in the captions. These errors are typically a result of API restrictions that prevent further captioning after reaching the limit.
 
-### Solution: HuggingFace Gemini Model
-To address the issue of incomplete image tagging, I integrated the **Gemini Image Captioning Model** available on **HuggingFace**. The model provides an alternative method for generating captions when the Google API is unavailable or when the quota is exhausted.
-
 While the HuggingFace model does not always provide captions with the same level of accuracy or context as the Google API, it offers a practical solution for tagging the images . As a result, some images may have captions that are less descriptive or inaccurate due to api key service being not available and the hugging face model being not that good.
 
 
@@ -85,7 +82,13 @@ Extract images using the contour-based approach.
 
 Generate relevant tags for each image.
 
-To run the system, replace the pdf filename in the snap.py script and use the following command:
+Git clone the repository in your system
+```
+git clone https://github.com/Vurhd0/Image-Extraction-and-Captioning.git
+```
+
+
+To run the system, replace the pdf filename to your choice pdf in the snap.py script and use the following command:
 bash
 ```
 ./run.sh
