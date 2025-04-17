@@ -1,50 +1,37 @@
-# Image-Extraction-and-Captioning system
+# Image Extraction and Tagging System
 
+This repository provides an automated system to **extract images** and **generate relevant tags** for NCERT textbook chapters provided in PDF format. The system consists of the following key steps:
 
-## Overview
+1. **Snapshot Creation**: Capture snapshots of each page in the PDF document.
+2. **Image Extraction (Contour-based)**: Extract images from the PDF using a contour-based approach using openCV.
+3. **Tagging**: Generate descriptive tags for the extracted images based on their content using Huggingface Blip model / google gemini api key.
 
-This project aims to create a system for extracting and tagging images from NCERT textbooks, where each chapter is provided in PDF format. The system involves three main steps:
+These steps are all automated by the `run.sh` script, which runs the necessary scripts in sequence.
 
-1. **Snapshot**: Captures the visual content of the PDF.
-2. **Image Extraction**: Extracts the images, excluding non-essential graphics such as borders, watermarks, and page numbers.
-3. **Image Tagging**: Generates relevant, descriptive tags or captions for each image extracted.
+## Workflow Overview
 
-The system is designed to be modular, easy to understand, and adaptable to various educational PDFs.
+The process follows this order:
 
-## Workflow
+1. **Step 1: Snapshot Creation**  
+   The first step involves creating a snapshot of each page in the provided PDF. This allows the system to capture and isolate the relevant images from the page content.
 
-### Step 1: Capture Snapshot of PDF
-In this step, the system scans the provided PDF file to identify the locations and dimensions of the images within each page. This step helps us ensure that we are capturing only relevant content and allows us to work with the images later on.
+2. **Step 2: Image Extraction Using Contour-based Approach**  
+   After creating the snapshots, the next step is to use a contour-based approach to detect and extract the images. This technique helps isolate the images and removes unnecessary elements such as watermarks, page borders, and patterns.
 
-- We start by loading the PDF and using **PyMuPDF** to extract visual content.
-- **OpenCV** or **Pillow** might be used to process images if any clean-up is required before tagging.
+3. **Step 3: Tagging the Extracted Images**  
+   Once the images are extracted, the system generates descriptive tags for each image. These tags help categorize the images and can reflect their content, such as "photosynthesis," "human skeleton," "map of India," etc.
 
-### Step 2: Extract Images from PDF
-Once the snapshot of the document has been captured, the next step involves extracting the images from the PDF. 
+4. **Step 4: Automation with `run.sh`**  
+   The `run.sh` script automates the entire process. It calls each Python script in the correct order—capturing snapshots, extracting images, and adding tags.
 
-- The system uses **PyMuPDF** to pull out the images embedded within the document.
-- It excludes any unnecessary graphical elements (e.g., watermarks, page borders) by analyzing the content type.
-- Each image is cropped to remove excessive whitespace, focusing on the meaningful visual content.
+## Getting Started
 
-### Step 3: Image Tagging
-After extracting the relevant images, the system generates descriptive tags or captions for each image. This can involve utilizing pre-trained **LLMs** or external APIs for context-aware caption generation.
+Follow these steps to set up and run the project:
 
-- Tags are generated based on the image content, such as **"photosynthesis"**, **"human skeleton"**, **"map of India"**, and so on.
-- These captions or tags are saved alongside the images, and a **metadata file** (either in JSON or CSV format) is generated to link each image to its corresponding tags.
+### Prerequisites
 
-## Libraries and Tools Used
+- Python 3.x
+- Required libraries: PyMuPDF, OpenCV, Pillow, transformers, pandas,google-generativeai
 
-- **PyMuPDF**: Extracts images and content from the PDF.
-- **OpenCV** & **Pillow**: For image processing tasks like cropping and cleaning.
-- **Transformers (Hugging Face)**: For generating captions or tags using LLMs.
-- **Requests**: For making API calls to external services for image captioning.
-
-## Step-by-Step Guide
-
-### Step 1: Image Snapshot
-1. **Prepare your PDF**: Place your NCERT textbook PDF in the root folder of the project.
-2. **Capture Snapshot**: Run the script to extract a snapshot of the PDF content. This step will prepare the document for the next phase.
-
-   ```bash
-   python snapshot_extractor.py your_pdf_file.pdf
+Installing of necessary libraries is being handaled by run.sh you just need to add the library name in requirements.txt file
 
