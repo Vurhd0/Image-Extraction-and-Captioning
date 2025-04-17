@@ -3,8 +3,8 @@ import pandas as pd
 import google.generativeai as genai
 from PIL import Image
 
-# Configure Gemini with your API key
-genai.configure(api_key="AIzaSyAHnmij-4td0qpDX0B4ywHgT3AFORKj7E0")  # Replace with your real API key
+
+genai.configure(api_key="AIzaSyAHnmij-4td0qpDX0B4ywHgT3AFORKj7E0")  
 
 # Load Gemini vision model
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -21,7 +21,7 @@ for file in sorted(os.listdir(image_folder)):
 
         try:
             image = Image.open(image_path)
-            prompt = "Describe this image. It is from a biology textbook, so focus on identifying what figure or diagram it might be."
+            prompt = "Add a tag or Caption to this image explaining it in one line."
 
             response = model.generate_content([prompt, image])
             caption = response.text.strip()
