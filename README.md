@@ -8,6 +8,27 @@ This repository provides an automated system to **extract images** and **generat
 
 These steps are all automated by the `run.sh` script, which runs the necessary scripts in sequence.
 
+## Files description
+
+1.**requirements.text**
+  It contains name of all the required libraries required for system
+
+2. **snap.py**
+   This python script generates snapshots of each page of pdf as image and store them in snapshots folder
+
+3 **ext.py**
+   This script uses opencv to extract images out of the snapshots and store them in Extracted images folder
+
+4 **adding_tag.py**
+   This script add tags to the images using the google gemini api and stores them in csv file gemini_cations.csv
+
+5 **adding_tag_transformer.py**
+   This code is an alternative code for the gemini api key tag generation as it fails on some images due to free tier not being available . Here we use the microsoft git image captioning model to caption the 
+   images
+6 **run.sh**
+   This is the shell script to run the whole system . you just need to place the files in same folder with pdf and can run all scripts using the run.sh (explained below)
+
+   
 ## Workflow Overview
 
 The process follows this order:
@@ -23,6 +44,23 @@ The process follows this order:
 
 4. **Step 4: Automation with `run.sh`**  
    The `run.sh` script automates the entire process. It calls each Python script in the correct order—capturing snapshots, extracting images, and adding tags.
+
+## Image Tagging Using Google API and HuggingFace Gemini Model
+
+### Overview
+In this project, the image tagging process is carried out using the **Google API Key** and the **HuggingFace Microsoft Git Image Captioning Model**. However, due to limitations in the free version of the Google API, I encountered issues while trying to tag all the images. Specifically, the Google API free tier does not allow processing an unlimited number of images, which caused some of the captions to fail.
+
+To work around this limitation, I leveraged the **Microsoft'S Git Captioning Model** available on HuggingFace for the image captioning task. This model serves as an alternative as the Google API is unable to process certain images due to the free-tier restrictions.
+
+### Challenges with the Google API
+The Google API for image captioning is powerful, but the free version has certain usage limits, including restrictions on the number of images that can be captioned within a specific time period or quota. As a result, some of the images failed to get tagged, leading to errors in the captions. These errors are typically a result of API restrictions that prevent further captioning after reaching the limit.
+
+### Solution: HuggingFace Gemini Model
+To address the issue of incomplete image tagging, I integrated the **Gemini Image Captioning Model** available on **HuggingFace**. The model provides an alternative method for generating captions when the Google API is unavailable or when the quota is exhausted.
+
+While the HuggingFace model does not always provide captions with the same level of accuracy or context as the Google API, it offers a practical solution for tagging the images . As a result, some images may have captions that are less descriptive or inaccurate due to api key service being not available and the hugging face model being not that good.
+
+
 
 ## Getting Started
 
