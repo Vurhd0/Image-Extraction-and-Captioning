@@ -3,4 +3,4 @@ pip install -r requirements.txt
 python snap.py
 python ext.py
 python adding_tag.py
-echo "Extraction completed"
+echo "Extraction and Captioning completed"
