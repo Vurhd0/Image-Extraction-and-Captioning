@@ -35,3 +35,6 @@ Follow these steps to set up and run the project:
 
 Installing of necessary libraries is being handaled by run.sh you just need to add the library name in requirements.txt file
 
+### To run and get output of tagged images with tags in csv file
+
+
