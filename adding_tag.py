@@ -21,7 +21,7 @@ for file in sorted(os.listdir(image_folder)):
 
         try:
             image = Image.open(image_path)
-            prompt = "Add a tag or Caption to this image explaining it in one line."
+            prompt = "Add a tag or Caption to this based on context you get from the image write just one line."
 
             response = model.generate_content([prompt, image])
             caption = response.text.strip()
