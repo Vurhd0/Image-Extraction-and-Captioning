@@ -2,5 +2,5 @@
 pip install -r requirements.txt
 python snap.py
 python ext.py
-python addingtag.py
+python adding_tag.py
 echo "Extraction completed"
