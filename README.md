@@ -70,17 +70,11 @@ Follow these steps to set up and run the project:
 - Python 3.x
 - Required libraries: PyMuPDF, OpenCV, Pillow, transformers, pandas,google-generativeai
 
-Installing of necessary libraries is being handaled by run.sh you just need to add the library name in requirements.txt file
+Installing of necessary libraries is being handled by run.sh you just need to add the library name in requirements.txt file
 
 ### To run and get output of tagged images with tags in csv file
 
-The entire process of image extraction and tagging is automated with the run.sh script. The script will perform the following steps in sequence:
-
-Create snapshots of each page of the PDF.
-
-Extract images using the contour-based approach.
-
-Generate relevant tags for each image.
+The entire process of image extraction and tagging is automated with the run.sh script.
 
 Git clone the repository in your system
 ```
